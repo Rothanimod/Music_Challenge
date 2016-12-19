@@ -1,0 +1,19 @@
+<h1>this is the index</h1>
+
+<div class="container" id="productsContainer">
+  <div class="row">
+    <div class="col-md-12">
+        <% @artists.each do |artist|%>
+          <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <%= image_tag artist.image_url, class: 'image-responsive'%>
+                <div class="caption">
+                  <h3><%=artist.name%> </h3>
+                  <p><%= link_to 'Ver mas', artist_path(id: artist.id),method: :get, class: 'btn btn-primary' %></p>
+                </div>
+              </div>
+          </div>
+        <%end%>
+    </div>
+  </div>
+</div>
